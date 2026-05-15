@@ -1,21 +1,59 @@
-<<<<<<< HEAD
-# React + Vite
+#  My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern responsive **React.js portfolio website** showcasing my projects, skills, and experience as a Front-End Developer.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## About the Project
+This portfolio is built to present my work in a clean and professional way.  
+It includes multiple real projects, smooth UI animations, and a fully responsive design for all devices.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##  Tech Stack
+- React.js ⚛️  
+- JavaScript (ES6+)  
+- HTML5 & CSS3  
+- Vite ⚡  
+- Responsive Design  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# My-Portfolio
-My React Portfolio
->>>>>>> f37fa7180d09dc73c0d63b34b7415821d9848979
+## Features
+- Modern UI/UX design  
+- Fully responsive layout  
+- Projects showcase section  
+- Smooth animations & transitions  
+- Dark mode support (if included)  
+
+---
+
+## 📸 Projects Preview
+Each project includes:
+- Live demo link  
+- GitHub repository  
+- Tech stack used  
+
+---
+
+##  Live Demo
+> Add your deployed link here (Vercel / Netlify)
+
+Example:
+https://your-portfolio-link.com
+
+---
+
+##  Contact
+Feel free to reach out:
+
+- Email: your-email@example.com  
+- LinkedIn: https://linkedin.com/in/your-profile  
+- GitHub: https://github.com/your-username  
+
+---
+
+##  Note
+This project is continuously improving as I learn new technologies and improve my skills.
+
+ If you like this project, feel free to star the repo!
