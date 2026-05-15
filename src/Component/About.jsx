@@ -8,7 +8,7 @@ const About = () => {
         .about {
           margin: 0 auto;
           width: 100%;
-          padding: 6rem 2rem;
+          padding: 4rem 2rem;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -75,7 +75,7 @@ const About = () => {
           content: '✦';
           position: absolute;
           left: -20px;
-          color: #0f7dec;
+          color: #0780fa;
           animation: sparkle 1s ease-in-out infinite;
         }
 
@@ -83,7 +83,7 @@ const About = () => {
           content: '✦';
           position: absolute;
           right: -20px;
-          color: #0f7dec;
+          color: #077ff7;
           animation: sparkle 1s ease-in-out infinite 1s;
         }
 
@@ -268,7 +268,7 @@ const About = () => {
       <section id="about" className="about animate-on-scroll">
         <div className="about-container">
           <div className="about-header">
-            <span className="about-badge">HELLO👋</span>
+            <span className="about-badge">HELLO</span>
             <h2 className="about-title">Introduction About Me</h2>
           </div>
 
@@ -295,7 +295,7 @@ const About = () => {
               <span className="stat-label">Years of Experience</span>
             </div>
             <div className="stat-card">
-              <span className="stat-number">4+</span>
+              <span className="stat-number">8+</span>
               <span className="stat-label">Projects Completed</span>
             </div>
           </div>

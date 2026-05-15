@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Hero from "../Component/Hero";
 import Skill from "../Component/Skill";
 import Contact from "../Component/Contact";
 import About from "../Component/About";
@@ -8,7 +9,7 @@ import Footer from "../Component/Footer";
 import Technical from "../Component/Technical";
 import "../css/Home.css";
 
-const Hero = () => {
+const Home = () => {
   useEffect(() => {
     const words = ["Front-End Developer", "React.js Developer"];
     let wordIndex = 0;
@@ -46,6 +47,7 @@ const Hero = () => {
 
   return (
     <>
+      <Hero />
       <section className="hero">
         <div className="hero-content hero-animate">
           <h1 className="h1">
@@ -65,13 +67,14 @@ const Hero = () => {
             deliver innovative and high-quality projects.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary">
-              <a href="https://github.com/MOHAMED54353" target="_blank" rel="noreferrer">
-                Github
-              </a>
+            <button
+              className="btn btn-primary"
+              onClick={() => window.open("https://github.com/MOHAMED54353", "_blank")}
+            >
+              Github
               <i className="fas fa-arrow-right"></i>
             </button>
-            <a href="#" className="btn btn-secondary">
+            <a href="/Muhammed Elsayed CV.pdf" className="btn btn-secondary" target="_blank" >
               Download CV <i className="fas fa-download"></i>
             </a>
           </div>
@@ -101,4 +104,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;

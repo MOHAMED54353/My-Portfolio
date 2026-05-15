@@ -180,7 +180,7 @@ body.dark-mode .nav-link.active {
 }
 
 body.dark-mode {
-  background: linear-gradient(90deg, #12002a 0%, #050008 50%, #1b003d 100%);
+  background: linear-gradient(90deg, #15002d 0%, #050008 50%, #15002d 100%);
   color: #dcdcff;
   transition: background 0.3s ease, color 0.3s ease;
 }

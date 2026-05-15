@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+
+/* ============================================
+   VARIABLES
+   ============================================ */
+:root {
+    --hd-bg: #f8f7ff;
+    --hd-glow-l: rgba(130, 100, 230, 0.13);
+    --hd-glow-r: rgba(100, 80, 200, 0.10);
+    --hd-glow-c: rgba(140, 100, 240, 0.09);
+    --hd-card-bg: rgba(110, 80, 200, 0.05);
+    --hd-card-border: rgba(110, 80, 200, 0.12);
+    --hd-eyebrow: rgba(80, 50, 160, 0.45);
+    --hd-heading: #0f0a1e;
+    --hd-accent: #7c3aed;
+    --hd-sub: rgba(30, 20, 60, 0.45);
+    --hd-btn-color: #0f0a1e;
+    --hd-btn-border: rgba(15, 10, 30, 0.22);
+    --hd-btn-hover-bg: rgba(15, 10, 30, 0.06);
+    --hd-btn-hover-bdr: rgba(15, 10, 30, 0.4);
+    --hd-arrow-border: rgba(15, 10, 30, 0.3);
+    --hd-transition: background 0.45s ease, color 0.45s ease, border-color 0.45s ease;
+}
+
+body.dark-mode {
+    --hd-bg: linear-gradient(90deg, #15002d 0%, #050008 50%, #15002d 100%);
+    ;
+    --hd-glow-l: rgba(100, 80, 200, 0.20);
+    --hd-glow-r: rgba(80, 60, 180, 0.16);
+    --hd-glow-c: rgba(130, 90, 230, 0.13);
+    --hd-card-bg: rgba(255, 255, 255, 0.025);
+    --hd-card-border: rgba(255, 255, 255, 0.06);
+    --hd-eyebrow: rgba(243, 246, 245, 0.937);
+    --hd-heading: #ffffff;
+    --hd-accent: #a78bfa;
+    --hd-sub: rgba(255, 255, 255, 0.919);
+    --hd-btn-color: #ffffff;
+    --hd-btn-border: rgba(255, 255, 255, 0.18);
+    --hd-btn-hover-bg: rgba(255, 255, 255, 0.07);
+    --hd-btn-hover-bdr: rgba(255, 255, 255, 0.38);
+    --hd-arrow-border: rgba(255, 255, 255, 0.45);
+}
+
+.hd-wrap {
+    background: var(--hd-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    transition: var(--hd-transition);
+}
+
+.hd-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: background 0.45s ease;
+}
+
+.hd-glow--left {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--hd-glow-l) 0%, transparent 68%);
+    top: -120px;
+    left: -120px;
+}
+
+.hd-glow--right {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--hd-glow-r) 0%, transparent 68%);
+    right: -80px;
+}
+
+.hd-glow--center {
+    width: 700px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, var(--hd-glow-c) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hd-cards {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hd-card {
+    position: absolute;
+    background: var(--hd-card-bg);
+    border: 1px solid var(--hd-card-border);
+    border-radius: 12px;
+    transition: var(--hd-transition);
+}
+
+.hd-card--1 {
+    width: 90px;
+    height: 115px;
+    top: 70px;
+    left: 8%;
+    transform: rotate(-8deg);
+}
+
+.hd-card--2 {
+    width: 68px;
+    height: 88px;
+    top: 90px;
+    left: calc(8% + 106px);
+    transform: rotate(-3deg);
+}
+
+.hd-card--3 {
+    width: 90px;
+    height: 115px;
+    top: 65px;
+    right: 8%;
+    transform: rotate(8deg);
+}
+
+.hd-card--4 {
+    width: 68px;
+    height: 88px;
+    top: 85px;
+    right: calc(8% + 106px);
+    transform: rotate(3deg);
+}
+
+/* ============================================
+   EYEBROW
+   ============================================ */
+.hd-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--hd-eyebrow);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.45s ease;
+}
+
+/* ============================================
+   HEADING
+   ============================================ */
+.hd-heading {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.07;
+    color: var(--hd-heading);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    transition: color 0.45s ease;
+}
+
+.hd-accent {
+    color: var(--hd-accent);
+    transition: color 0.45s ease;
+}
+
+/* ============================================
+   SUBTITLE
+   ============================================ */
+.hd-sub {
+    font-size: 17px;
+    color: var(--hd-sub);
+    font-weight: 400;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.01em;
+    transition: color 0.45s ease;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.hd-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.hd-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--hd-btn-color);
+    background: transparent;
+    border: 1.5px solid var(--hd-btn-border);
+    transition: background 0.22s ease, border-color 0.22s ease,
+        color 0.45s ease, transform 0.22s ease;
+}
+
+.hd-btn:hover {
+    background: var(--hd-btn-hover-bg);
+    border-color: var(--hd-btn-hover-bdr);
+    transform: translateY(-2px);
+}
+
+.hd-arrow {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid var(--hd-arrow-border);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.45s ease;
+}
+
+.hd-arrow svg {
+    width: 9px;
+    height: 9px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .hd-wrap {
+        padding: 60px 24px;
+    }
+
+    .hd-card--1,
+    .hd-card--2,
+    .hd-card--3,
+    .hd-card--4 {
+        display: none;
+    }
+
+    .hd-sub {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hd-btns {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hd-wrap {
+        margin-bottom: -190px;
+        margin-top: -40px;
+    }
+
+    .hd-btn {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .hd-eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+}

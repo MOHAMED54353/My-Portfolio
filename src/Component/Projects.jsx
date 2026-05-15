@@ -1,20 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Projects = () => {
+    useEffect(() => {
+        const observerOptions = {
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                } else {
+                    entry.target.classList.remove("visible");
+                }
+            });
+        }, observerOptions);
+
+        const animatedElements = document.querySelectorAll(".animate-on-scroll");
+        animatedElements.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+
     const allProjects = [
         { title: "Fixora AI", cat: "AI Powered Platform", img: "/Screenshot 2026-03-23 200016.png" },
-        { title: "Elmatgar E-Commerce", cat: "Full Stack", img: "/Screenshot 2026-03-30 120926.png", tech: "React & JSON Server" },
-        { title: "Alahly Website", cat: "UI/UX & Frontend", img: "/Screenshot 2026-03-30 115019.png", link: "https://heartfelt-figolla-e590ae.netlify.app" },
-        { title: "PlantiCa Website", cat: "Frontend", img: "/pp.png", link: "https://euphonious-froyo-9ba1d4.netlify.app/" },
+        { title: "Elmatgar E-Commerce", cat: "Full Stack E-Commerce", img: "/Screenshot 2026-03-30 120926.png", tech: "React & JSON Server" },
+        { title: "Athar", cat: "Fashion Wear Web App", img: "/athar.png", link: "https://athar-gules.vercel.app/" },
+        { title: "Alahly Website", cat: "UI/UX & Frontend Design Animation", img: "/Screenshot 2026-03-30 115019.png", link: "https://heartfelt-figolla-e590ae.netlify.app" },
+        { title: "PlantiCa Website", cat: "Plants Services & Shop", img: "/pp.png", link: "https://euphonious-froyo-9ba1d4.netlify.app/" },
+        { title: "wasel Website", cat: "Shipment Tracking Web App", img: "/wasel.png", link: "https://helpful-semifreddo-2943be.netlify.app/" },
         { title: "Alahly Playlist", cat: "Music-playlist Web App", img: "/Screenshot 2026-04-16 151916.png", link: "https://melodic-valkyrie-65d414.netlify.app" },
-        { title: "Autocare System", cat: "Management", img: "/Screenshot 2026-03-26 091959.png" },
+        { title: "Autocare System", cat: "Landing Management System", img: "/Screenshot 2026-03-26 091959.png" },
         { title: "Landing Page", cat: "Design", img: "/Screenshot 2026-03-23 200638.png", link: "https://meek-meerkat-622f81.netlify.app" },
     ];
 
     return (
         <section className="projects-section">
             <style>{`
-                .projects-section { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; }
+                .projects-section { padding: 4rem 2rem; max-width: 1050px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; }
                 .projects-top { text-align: center; margin-bottom: 2rem; }
                 .projects-top span { color: #8b5cf6; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; }
                 .projects-top h2 { font-size: 2.2rem; font-weight: 800; color: #0f7dec; margin-top: 0.2rem; }
@@ -43,17 +66,43 @@ const Projects = () => {
 
                 body.dark-mode .image-wrapper { background: #1e293b; border-color: rgba(255,255,255,0.1); }
                 body.dark-mode .project-info h3 { color: #f1f5f9; }
-                @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+
+                /* Spline wrapper */
+                .spline-wrapper { width: 100%; height: 500px; margin-top: 4rem; border-radius: 24px; overflow: hidden; }
+                .spline-wrapper iframe { width: 100%; height: 100%; border: none; display: block; }
+
+                @media (max-width: 768px) { 
+                    .projects-grid { grid-template-columns: 1fr; } 
+                    .spline-wrapper { height: 300px; margin-top: 2.5rem; }
+                }
+
+                /* --- Animation Styles (same pattern as Contact) --- */
+                .animate-on-scroll {
+                    opacity: 0;
+                    transform: translateY(60px);
+                    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+                                transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+                    will-change: transform, opacity;
+                }
+
+                .animate-on-scroll.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             `}</style>
 
-            <div className="projects-top" id="projects">
+            <div className="projects-top animate-on-scroll" id="projects">
                 <span>Projects</span>
                 <h2>Featured Work</h2>
             </div>
 
             <div className="projects-grid">
                 {allProjects.map((p, i) => (
-                    <a key={i} className="project-card" href={p.link ? p.link : p.img}
+                    <a
+                        key={i}
+                        className="project-card animate-on-scroll"
+                        style={{ transitionDelay: `${(i % 2) * 0.1}s` }}
+                        href={p.link ? p.link : p.img}
                         target="_blank" rel="noreferrer">
                         <div className="image-wrapper">
                             {p.tech && <span className="tech-tag">{p.tech}</span>}
@@ -68,6 +117,14 @@ const Projects = () => {
                         </div>
                     </a>
                 ))}
+            </div>
+            <div className="spline-wrapper animate-on-scroll">
+                <iframe
+                    src="https://my.spline.design/nexbotbyaximoriscopycopy-44c7Ibh8YDoKtcocPFkPL2pD/"
+                    frameBorder="0"
+                    title="Spline 3D Scene"
+                    allowFullScreen
+                />
             </div>
         </section>
     );
