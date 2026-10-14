@@ -149,9 +149,7 @@ body.dark-mode {
     transition: color 0.45s ease;
 }
 
-/* ============================================
-   HEADING
-   ============================================ */
+
 .hd-heading {
     font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 900;
@@ -169,9 +167,6 @@ body.dark-mode {
     transition: color 0.45s ease;
 }
 
-/* ============================================
-   SUBTITLE
-   ============================================ */
 .hd-sub {
     font-size: 17px;
     color: var(--hd-sub);
