@@ -24,10 +24,11 @@ const Projects = () => {
 
     const allProjects = [
         { title: "Fixora AI", cat: "AI Powered Platform", img: "/Screenshot 2026-03-23 200016.png", link: "https://fixora-one.vercel.app/home" },
-        { title: "Elmatgar E-Commerce", cat: "Full Stack E-Commerce", img: "/Screenshot 2026-03-30 120926.png", tech: "React & JSON Server" },
         { title: "Athar", cat: "Fashion Wear Web App", img: "/athar.png", link: "https://athar-gules.vercel.app/" },
+        { title: "Qatma", cat: "Restaurant Web App", img: "/Qatma.png", link: "https://qatma-seven.vercel.app/" },
         { title: "Alahly Website", cat: "UI/UX & Frontend Design Animation", img: "/Screenshot 2026-03-30 115019.png", link: "https://alahly-liart.vercel.app/" },
         { title: "PlantiCa Website", cat: "Plants Services & Shop", img: "/pp.png", link: "https://plantica-pearl.vercel.app/" },
+        { title: "Elmatgar E-Commerce", cat: "Full Stack E-Commerce", img: "/Screenshot 2026-03-30 120926.png", tech: "React & JSON Server" },
         { title: "wasel Website", cat: "Shipment Tracking Web App", img: "/wasel.png", link: "https://wsel-app.vercel.app/" },
         { title: "Alahly Playlist", cat: "Music-playlist Web App", img: "/Screenshot 2026-04-16 151916.png", link: "https://playlist-lime.vercel.app/" },
         { title: "Autocare System", cat: "Landing Management System", img: "/Screenshot 2026-03-26 091959.png" },
