@@ -85,7 +85,7 @@ const Home = () => {
             <div className="gradient-ring"></div>
             <img
               src="/صورة واتساب بتاريخ 1447-01-04 في 06.50.19_76423597.jpg"
-              alt="Profile"
+              alt="profile photo"
             />
             <div className="decoration"></div>
             <div className="decoration"></div>
