@@ -11,19 +11,17 @@ A modern, responsive developer portfolio featuring interactive 3D visuals, smoot
 <div align="center">
 
 <a href="https://my-portfolio-beige-eight-28.vercel.app/">
-  <img src="https://img.shields.io/badge/🚀_Live_Demo-Explore_My_Portfolio-6366F1?style=for-the-badge" alt="Live Portfolio"/>
+  <img src="https://img.shields.io/badge/VIEW_PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Portfolio" />
 </a>
-&nbsp;
+<br/><br/>
 <a href="https://react.dev/">
-  <img src="https://img.shields.io/badge/React-Modern_UI-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
 </a>
-&nbsp;
 <a href="https://vite.dev/">
-  <img src="https://img.shields.io/badge/Vite-Fast_Build_Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
+  <img src="https://img.shields.io/badge/Vite-20232A?style=for-the-badge&logo=vite&logoColor=646CFF" alt="Vite" />
 </a>
-&nbsp;
 <a href="https://spline.design/">
-  <img src="https://img.shields.io/badge/Spline-Interactive_3D-5B4BFF?style=for-the-badge" alt="Spline"/>
+  <img src="https://img.shields.io/badge/Spline-20232A?style=for-the-badge&logoColor=white" alt="Spline" />
 </a>
 
 </div>
