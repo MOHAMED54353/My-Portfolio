@@ -2,7 +2,7 @@
 
 # Muhammed El-Sayed | Portfolio
 
-### Front-End Developer · Creative Web Experiences
+### Front-End  Engineer · Creative Web Experiences
 
 A modern, responsive developer portfolio featuring interactive 3D visuals, smooth animations, and a dark aesthetic, built with React and Vite.
 
