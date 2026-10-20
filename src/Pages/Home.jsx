@@ -11,7 +11,7 @@ import "../css/Home.css";
 
 const Home = () => {
   useEffect(() => {
-    const words = ["Front-End Developer", "React.js Developer"];
+    const words = ["Front-End Engineer", "React.js Developer"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
