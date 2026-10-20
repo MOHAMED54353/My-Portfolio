@@ -68,16 +68,21 @@ body.dark-mode .hero-greeting {
 
 .typed-text {
   color: #0f7dec;
+  background: linear-gradient(90deg, #f8240d, #0f7dec, #667eea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 body.dark-mode .typed-text {
   color: #38a4ff;
+  background-image: linear-gradient(90deg, #f8240d, #38a4ff, #7388fd, #f8240d);
 }
 
 .typed-cursor {
   color: #0f7dec;
   font-weight: 300;
-  animation: blink 0.8s step-end infinite;
+  animation: blink 1.5s step-end infinite;
 }
 
 body.dark-mode .typed-cursor {
@@ -85,14 +90,14 @@ body.dark-mode .typed-cursor {
 }
 
 @keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
   50% {
     opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typed-cursor {
+    animation: none;
   }
 }
 

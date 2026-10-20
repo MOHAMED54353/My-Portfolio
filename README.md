@@ -1,19 +1,14 @@
 <div align="center">
-
 # Muhammed El-Sayed | Portfolio
 
 ### Front-End  Engineer · Creative Web Experiences
 
 A modern, responsive developer portfolio featuring interactive 3D visuals, smooth animations, and a dark aesthetic, built with React and Vite.
 
-<br />
-
-<div align="center">
-
 <a href="https://my-portfolio-beige-eight-28.vercel.app/">
   <img src="https://img.shields.io/badge/VIEW_PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Portfolio" />
 </a>
-<br/><br/>
+
 <a href="https://react.dev/">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
 </a>
@@ -24,10 +19,7 @@ A modern, responsive developer portfolio featuring interactive 3D visuals, smoot
   <img src="https://img.shields.io/badge/Spline-20232A?style=for-the-badge&logoColor=white" alt="Spline" />
 </a>
 
-</div>
 
-
-</div>
 
 <!-- <p align="center"><img src="/public/" alt="Portfolio preview" width="800" /></p> -->
 
@@ -148,8 +140,6 @@ Open `http://localhost:5173` in your browser.
 
 ## Connect With Me
 
-<div align="center">
-
 <a href="https://github.com/MOHAMED54353">
   <img src="https://img.shields.io/badge/GitHub-MOHAMED54353-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile" />
 </a>
@@ -160,16 +150,10 @@ Open `http://localhost:5173` in your browser.
   <img src="https://img.shields.io/badge/Portfolio-Visit%20Website-6366f1?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Portfolio" />
 </a>
 
-</div>
-
 ---
-
-<div align="center">
 
 **Designed & Developed by Muhammed El-Sayed**
 
 *Turning ideas into interactive web experiences.*
 
 ⭐ If you like this project, consider giving the repository a star!
-
-</div>
