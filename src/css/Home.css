@@ -97,9 +97,9 @@ body.dark-mode .typed-cursor {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.8;
-  color: #555;
+  color: #130f0f;
   margin-bottom: 2.5rem;
   text-align: justify;
   max-width: 600px;
@@ -175,8 +175,12 @@ body.dark-mode .btn-secondary {
 
 .image-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: min(400px, 80vw);
+  aspect-ratio: 1 / 1;
+  border: 5px solid rgb(1, 206, 252);
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 0 30px rgba(1, 206, 252, 0.35);
 }
 
 .image-container img {
@@ -189,12 +193,19 @@ body.dark-mode .btn-secondary {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 2;
+  display: block;
+}
+
+body.dark-mode .image-container {
+  box-shadow: 0 0 30px rgba(1, 206, 252, 0.25);
 }
 
 body.dark-mode .image-container img {
   border-color: #3d5070;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
+/* ---------- Decorations ---------- */
 .decoration {
   position: absolute;
   width: 60px;
@@ -202,6 +213,9 @@ body.dark-mode .image-container img {
   border-radius: 12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   animation: float 3s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+  will-change: transform;
 }
 
 .decoration:nth-child(2) {
@@ -217,16 +231,32 @@ body.dark-mode .image-container img {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
+/* بدل transform: translateY(-50%) اللي كان بيتعارض مع animation الـ float */
 .decoration:nth-child(4) {
-  top: 50%;
+  top: calc(50% - 20px);
   right: -40px;
-  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   animation-delay: 1s;
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
+/* ---------- Gradient ring ---------- */
+.gradient-ring {
+  position: absolute;
+  width: min(420px, 84vw);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  z-index: 1;
+  animation: rotate 10s linear infinite;
+  filter: blur(20px);
+  opacity: 0.5;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ---------- Animations ---------- */
 @keyframes float {
 
   0%,
@@ -239,24 +269,12 @@ body.dark-mode .image-container img {
   }
 }
 
-.gradient-ring {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-  z-index: 1;
-  animation: rotate 10s linear infinite;
-  filter: blur(20px);
-  opacity: 0.5;
-}
-
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
 
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -282,6 +300,40 @@ body.dark-mode .image-container img {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .decoration {
+    width: 44px;
+    height: 44px;
+  }
+
+  .decoration:nth-child(2) {
+    top: -12px;
+    right: -8px;
+  }
+
+  .decoration:nth-child(3) {
+    bottom: -12px;
+    left: -8px;
+  }
+
+  .decoration:nth-child(4) {
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+    right: -14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-image,
+  .decoration,
+  .gradient-ring {
+    animation: none;
   }
 }
 
