@@ -6,8 +6,7 @@
 A modern, responsive developer portfolio featuring interactive 3D visuals, smooth animations, and a dark aesthetic, built with React and Vite.
 
 <a href="https://my-portfolio-beige-eight-28.vercel.app/">
-  <img src="https://img.shields.io/badge/VIEW_PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Portfolio" />
-</a>
+[![View Portfolio](https://img.shields.io/badge/VIEW_PORTFOLIO-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://my-portfolio-beige-eight-28.vercel.app/)
 
 <a href="https://react.dev/">
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
@@ -19,10 +18,7 @@ A modern, responsive developer portfolio featuring interactive 3D visuals, smoot
   <img src="https://img.shields.io/badge/Spline-20232A?style=for-the-badge&logoColor=white" alt="Spline" />
 </a>
 
-
-
 <!-- <p align="center"><img src="/public/" alt="Portfolio preview" width="800" /></p> -->
-
 
 ---
 
@@ -152,7 +148,7 @@ Open `http://localhost:5173` in your browser.
 
 ---
 
-**Designed & Developed by Muhammed El-Sayed**
+### Designed & Developed by Muhammed El-Sayed
 
 *Turning ideas into interactive web experiences.*
 
