@@ -64,6 +64,10 @@ body.dark-mode .hero-greeting {
   display: flex;
   align-items: center;
   gap: 6px;
+  line-height: 1.5;
+  height: 1.5em;
+  white-space: nowrap;
+  contain: layout style;
 }
 
 .typed-text {
@@ -210,7 +214,6 @@ body.dark-mode .image-container img {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-/* ---------- Decorations ---------- */
 .decoration {
   position: absolute;
   width: 60px;
@@ -236,7 +239,6 @@ body.dark-mode .image-container img {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-/* بدل transform: translateY(-50%) اللي كان بيتعارض مع animation الـ float */
 .decoration:nth-child(4) {
   top: calc(50% - 20px);
   right: -40px;
@@ -246,7 +248,6 @@ body.dark-mode .image-container img {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-/* ---------- Gradient ring ---------- */
 .gradient-ring {
   position: absolute;
   width: min(420px, 84vw);
@@ -261,7 +262,6 @@ body.dark-mode .image-container img {
   will-change: transform;
 }
 
-/* ---------- Animations ---------- */
 @keyframes float {
 
   0%,
@@ -308,8 +308,13 @@ body.dark-mode .image-container img {
   }
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
+
+  .gradient-ring {
+    animation: none;
+    filter: blur(14px);
+  }
+
   .decoration {
     width: 44px;
     height: 44px;
