@@ -1,130 +1,384 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { FiEye, FiGithub, FiX, FiTag } from "react-icons/fi";
+import "../css/Projects.css";
+
+
+const projects = [
+    {
+        title: "Fixora AI",
+        desc: "An AI-powered car maintenance platform that simplifies vehicle servicing through intelligent issue diagnosis, online service booking, and technician coordination. Built with React, featuring role-based experiences for customers, technicians, and administrators, API integration, authentication, booking management, and a complete service workflow. Developed the frontend as part of a collaborative graduation project with a dedicated backend team.",
+        tech: [
+            "SaaS",
+            "React.Js",
+            "REST APIs",
+            "React Router",
+            "Bootstrap",
+            "Axios",
+            "JavaScript",
+            "JWT Authentication",
+            "Context API",
+            "Zod",
+            "React Toastify"
+        ],
+        img: "/fixora1.png",
+        images: ["/fixora1.png", "/fixora2.png", "/fixora4.png","/fixora3.png"],
+        link: "https://fixora-one.vercel.app/home",
+        github: "https://github.com/MOHAMED54353/Fixora-Ai",
+    },
+    {
+        title: "ATHAR® — Premium Fashion",
+        desc: "A premium fashion e-commerce experience built around a distinctive visual identity and immersive digital storytelling. Combines sophisticated product presentation, refined layouts, smooth animations, and responsive interactions to create an engaging brand experience across devices. Designed to bring modern fashion aesthetics into an elegant, interactive web interface.",
+        tech: [
+            "E-commerce",
+            "React.js",
+            "React Router",
+            "Bootstrap",
+            "JavaScript",
+            "CSS",
+            "Font-Awseome",
+            "Framer Motion",
+            "React Icons",
+        ],
+        img: "/athar.png",
+        images: ["/athar.png", "/athar2.png", "/athar3.png", "/athar4.png", "/athar5.png",],
+        link: "https://athar-gules.vercel.app/",
+        github: "https://github.com/MOHAMED54353/Athar",
+    },
+    {
+        title: "Elmatgar — E-Commerce",
+        desc: "An interactive e-commerce application that enables users to explore products, view product information, and manage their shopping cart. Built with React and JavaScript, using JSON Server as a mock backend to simulate API requests and data operations during development.",
+        tech: [
+            "E-commerce",
+            "Bootstrap",
+            "React.js",
+            "JavaScript",
+            "JSON Server",
+            "REST API"
+        ],
+        img: "/Screenshot 2026-03-30 120926.png",
+        images: [],
+        link: "",
+        github: "",
+    },
+    {
+        title: "Wasel — Shipment Tracking",
+        desc: "A React-based shipment tracking application designed to give users a clear view of their delivery information and shipment status. Focuses on organizing tracking details into an intuitive interface, with reusable components and a responsive layout for a consistent experience across devices.",
+        tech: [
+            "React",
+            "React Router",
+            "Tailwend CSS",
+            "JavaScript",
+            "CSS",
+            "Bootstrap",
+        ],
+        img: "/wasel.png",
+        images: ["/wasel.png", "/wsel2.png", "/wsel3.png",],
+        link: "https://wsel-app.vercel.app/",
+        github: "",
+    },
+    {
+        title: "PlantiCa — Plant Store",
+        desc: "A React-based plant shopping experience that brings plant discovery and online product browsing into one interface. Designed to showcase plants and related offerings through reusable UI components and responsive layouts. Currently focused on the frontend, with backend integration planned for a future stage.",
+        tech: [
+            "E-commerce",
+            "Bootstrap",
+            "React",
+            "JavaScript",
+            "CSS"
+        ],
+        img: "/pp.png",
+        images: [],
+        link: "https://plantica-pearl.vercel.app/",
+        github: "",
+    },
+    {
+        title: "Qatma — Egyptian Home Kitchen",
+        desc: "A responsive website for an Egyptian home kitchen, designed to introduce the brand, showcase its food offerings, and create a welcoming online presence. Built with semantic HTML and custom CSS, with a focus on visual consistency, clear content hierarchy, and an accessible browsing experience.",
+        tech: [
+            "HTML5",
+            "CSS3"
+        ],
+        img: "/Qatma.png",
+        images: [],
+        link: "https://qatma-seven.vercel.app/",
+        github: "https://github.com/MOHAMED54353/Qatma",
+    },
+    {
+        title: "Al Ahly — Interactive Fan Website",
+        desc: "A React-based fan website inspired by Al Ahly SC, combining football-themed visuals, interactive UI elements, and frontend animations into an engaging digital experience. Created as a personal project to explore creative interface development, animation techniques, and the presentation of a football club's identity through the web.",
+        tech: [
+            "React.Js",
+            "JavaScript",
+            "Bootstrap",
+            "CSS",
+            "Frontend Animations"
+        ],
+        img: "/Screenshot 2026-03-30 115019.png",
+        images: [],
+        link: "https://alahly-liart.vercel.app/",
+        github: "https://github.com/MOHAMED54353/Al-Ahly-Interactive-Website",
+    },
+    {
+        title: "El-Nasser — Medical Laboratory",
+        desc: "A website for a medical laboratory, built to present laboratory services and essential information through a clear, organized interface. Developed using HTML and CSS, with an emphasis on readable content, structured layouts, and straightforward navigation to help visitors find relevant information.",
+        tech: [
+            "HTML5",
+            "CSS3"
+        ],
+        img: "/elnasser.png",
+        images: [],
+        link: "https://el-nasser-lab.vercel.app/",
+        github: "https://github.com/MOHAMED54353/El-nasser-lab",
+    },
+    {
+        title: "Autocare — Automotive Landing Page",
+        desc: "A landing page for an automotive care business, designed to present car maintenance services and establish a clear online brand presence. Built with HTML and CSS, focusing on structured content, service presentation, and a clean visual layout.",
+        tech: [
+            "HTML5",
+            "CSS3"
+        ],
+        img: "/Screenshot 2026-03-26 091959.png",
+        images: [],
+        link: "",
+        github: "",
+    },
+];
+
+const MAX_CARD_TAGS = 3;
+const IconButton = ({ href, label, children }) =>
+    href ? (
+        <a
+            className="icon-btn"
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={label}
+            title={label}
+        >
+            {children}
+        </a>
+    ) : (
+        <span className="icon-btn disabled" aria-disabled="true" title={`${label} (not available)`}>
+            {children}
+        </span>
+    );
+
+const ModalButton = ({ href, primary, icon, children, disabledText }) =>
+    href ? (
+        <a
+            className={`pj-btn${primary ? " primary" : ""}`}
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+        >
+            {icon} {children}
+        </a>
+    ) : (
+        <span className="pj-btn disabled" aria-disabled="true">
+            {icon} {disabledText || children}
+        </span>
+    );
 
 const Projects = () => {
+    const [selected, setSelected] = useState(null);
+    const [activeImg, setActiveImg] = useState(0);
+
+    const openDetails = (p) => {
+        setActiveImg(0);
+        setSelected(p);
+    };
+
     useEffect(() => {
-        const observerOptions = {
-            threshold: 0.1,
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                } else {
-                    entry.target.classList.remove("visible");
-                }
-            });
-        }, observerOptions);
-
-        const animatedElements = document.querySelectorAll(".animate-on-scroll");
-        animatedElements.forEach((el) => observer.observe(el));
-
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        document
+            .querySelectorAll(".projects-section .animate-on-scroll")
+            .forEach((el) => observer.observe(el));
         return () => observer.disconnect();
     }, []);
 
-    const allProjects = [
-        { title: "Fixora AI", cat: "AI Powered Platform", img: "/Screenshot 2026-03-23 200016.png", link: "https://fixora-one.vercel.app/home" },
-        { title: "Athar", cat: "Fashion Wear Web App", img: "/athar.png", link: "https://athar-gules.vercel.app/" },
-        { title: "Qatma", cat: "Restaurant Web App", img: "/Qatma.png", link: "https://qatma-seven.vercel.app/" },
-        { title: "Alahly Website", cat: "UI/UX & Frontend Design Animation", img: "/Screenshot 2026-03-30 115019.png", link: "https://alahly-liart.vercel.app/" },
-        { title: "El-Nasser Medical Lab", cat: "Medical Laboratory", img: "/elnasser.png", link: "https://el-nasser-lab.vercel.app/" },        { title: "PlantiCa Website", cat: "Plants Services & Shop", img: "/pp.png", link: "https://plantica-pearl.vercel.app/" },
-        { title: "Elmatgar E-Commerce", cat: "Full Stack E-Commerce", img: "/Screenshot 2026-03-30 120926.png", tech: "React & JSON Server" },
-        { title: "wasel Website", cat: "Shipment Tracking Web App", img: "/wasel.png", link: "https://wsel-app.vercel.app/" },
-        { title: "Alahly Website", cat: "UI/UX & Frontend Design Animation", img: "/Screenshot 2026-03-30 115019.png", link: "https://alahly-liart.vercel.app/" },
-        { title: "About Me", cat: "HTML & CSS", img: "/aboutme.png", link: "https://about-me-two-lyart.vercel.app/" },
-        { title: "Autocare System", cat: "Landing Management System", img: "/Screenshot 2026-03-26 091959.png" },
-        { title: "Landing Page", cat: "Design", img: "/Screenshot 2026-03-23 200638.png", link: "https://meek-meerkat-622f81.netlify.app" },
-    ];
+    useEffect(() => {
+        if (!selected) return;
+        const onKey = (e) => e.key === "Escape" && setSelected(null);
+        document.addEventListener("keydown", onKey);
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.removeEventListener("keydown", onKey);
+            document.body.style.overflow = prev;
+        };
+    }, [selected]);
+
+    const gallery = selected
+        ? selected.images && selected.images.length > 0
+            ? selected.images
+            : [selected.img]
+        : [];
 
     return (
         <section className="projects-section">
-            <style>{`
-                .projects-section { padding: 4rem 2rem; max-width: 1050px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; }
-                .projects-top { text-align: center; margin-bottom: 2rem; }
-                .projects-top span { color: #8b5cf6; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; }
-                .projects-top h2 { font-size: 2.2rem; font-weight: 800; color: #0f7dec; margin-top: 0.2rem; }
-                .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-                .project-card { text-decoration: none; display: block; position: relative; outline: none; }
-                
-                .image-wrapper { width: 100%; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; position: relative; background: #f8fafc; border: 1px solid rgba(0,0,0,0.04); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-                .image-overlay { position: absolute; inset: 0; background: rgba(139, 92, 246, 0.15); display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; backdrop-filter: blur(4px); }
-                .view-btn { background: #fff; color: #1a1a1a; padding: 8px 18px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; transform: translateY(15px); transition: 0.3s ease-out; }
-                
-                .project-card img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: 0.6s ease; }
-                .tech-tag { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.9); padding: 4px 10px; border-radius: 6px; font-size: 0.65rem; font-weight: 700; color: #8b5cf6; z-index: 2; }
-                
-                /* Animation الكلام */
-                .project-info { padding: 1rem 0.2rem; transition: transform 0.3s ease; }
-                .project-info h3 { font-size: 1.1rem; color: #0f172a; font-weight: 800; margin: 0; transition: all 0.3s ease; }
-                .project-info p { color: #64748b; font-size: 0.85rem; margin-top: 0.2rem; transition: all 0.3s ease; }
-
-                .project-card:hover .image-wrapper { transform: translateY(-8px); box-shadow: 0 15px 30px -10px rgba(139,92,246,0.25); }
-                .project-card:hover .image-overlay { opacity: 1; }
-                .project-card:hover .view-btn { transform: translateY(0); }
-                .project-card:hover img { transform: scale(1.1); }
-                
-                .project-card:hover h3 { color: #8b5cf6; transform: translateX(5px); }
-                .project-card:hover p { transform: translateX(5px); color: #8b5cf6; opacity: 0.8; }
-
-                body.dark-mode .image-wrapper { background: #1e293b; border-color: rgba(255,255,255,0.1); }
-                body.dark-mode .project-info h3 { color: #f1f5f9; }
-
-                /* Spline wrapper */
-                .spline-wrapper { width: 100%; height: 500px; margin-top: 4rem; border-radius: 24px; overflow: hidden; }
-                .spline-wrapper iframe { width: 100%; height: 100%; border: none; display: block; }
-
-                @media (max-width: 768px) { 
-                    .projects-grid { grid-template-columns: 1fr; } 
-                    .spline-wrapper { height: 300px; margin-top: 2.5rem; }
-                }
-
-                /* --- Animation Styles (same pattern as Contact) --- */
-                .animate-on-scroll {
-                    opacity: 0;
-                    transform: translateY(60px);
-                    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-                                transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-                    will-change: transform, opacity;
-                }
-
-                .animate-on-scroll.visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            `}</style>
-
             <div className="projects-top animate-on-scroll" id="projects">
                 <span>Projects</span>
                 <h2>Featured Work</h2>
             </div>
 
             <div className="projects-grid">
-                {allProjects.map((p, i) => (
-                    <a
-                        key={i}
+                {projects.map((p, i) => (
+                    <article
+                        key={p.title}
                         className="project-card animate-on-scroll"
                         style={{ transitionDelay: `${(i % 2) * 0.1}s` }}
-                        href={p.link ? p.link : p.img}
-                        target="_blank" rel="noreferrer">
-                        <div className="image-wrapper">
-                            {p.tech && <span className="tech-tag">{p.tech}</span>}
-                            <img src={p.img} alt={p.title} />
-                            <div className="image-overlay">
-                                <div className="view-btn">View Project</div>
+                    >
+                        <div className="card-image">
+                            <img
+                                src={encodeURI(p.img)}
+                                alt={p.title}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </div>
+
+                        <div className="project-body">
+                            <h3>{p.title}</h3>
+                            <p className="card-desc">{p.desc}</p>
+
+                            {p.tech.length > 0 && (
+                                <ul className="tech-list card-tags">
+                                    {p.tech.slice(0, MAX_CARD_TAGS).map((t) => (
+                                        <li key={t} className="tech-tag">{t}</li>
+                                    ))}
+                                    {p.tech.length > MAX_CARD_TAGS && (
+                                        <li className="tech-tag more">+{p.tech.length - MAX_CARD_TAGS}</li>
+                                    )}
+                                </ul>
+                            )}
+
+                            <div className="card-actions">
+                                <button
+                                    type="button"
+                                    className="details-btn"
+                                    onClick={() => openDetails(p)}
+                                >
+                                    <FiEye /> View Details
+                                </button>
+                                <IconButton href={p.link} label="Live demo">
+                                    <FiEye />
+                                </IconButton>
+                                <IconButton href={p.github} label="GitHub repository">
+                                    <FiGithub />
+                                </IconButton>
                             </div>
                         </div>
-                        <div className="project-info">
-                            <h3>{p.title}</h3>
-                            <p>{p.cat}</p>
-                        </div>
-                    </a>
+                    </article>
                 ))}
             </div>
+
+            {selected &&
+                createPortal(
+                    <div className="pj-backdrop" onClick={() => setSelected(null)}>
+                        <div
+                            className="pj-modal"
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label={selected.title}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <div className="pj-head">
+                                <h3>{selected.title}</h3>
+                                <button
+                                    type="button"
+                                    className="pj-close"
+                                    onClick={() => setSelected(null)}
+                                    aria-label="Close"
+                                    autoFocus
+                                >
+                                    <FiX />
+                                </button>
+                            </div>
+
+                            <div className="pj-grid">
+                                <div className="pj-gallery">
+                                    <img
+                                        className="pj-main-img"
+                                        src={encodeURI(gallery[activeImg] || selected.img)}
+                                        alt={selected.title}
+                                    />
+                                    {gallery.length > 1 && (
+                                        <div className="pj-thumbs">
+                                            {gallery.map((src, idx) => (
+                                                <button
+                                                    key={src}
+                                                    type="button"
+                                                    className={`thumb${idx === activeImg ? " active" : ""}`}
+                                                    onClick={() => setActiveImg(idx)}
+                                                    aria-label={`Screenshot ${idx + 1}`}
+                                                >
+                                                    <img src={encodeURI(src)} alt="" />
+                                                </button>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+
+                                <div className="pj-info">
+                                    <p className="pj-desc">{selected.desc}</p>
+
+                                    {selected.tech.length > 0 && (
+                                        <>
+                                            <hr />
+                                            <div className="pj-row">
+                                                <span className="pj-label">
+                                                    <FiTag /> Tags:
+                                                </span>
+                                                <ul className="tech-list">
+                                                    {selected.tech.map((t) => (
+                                                        <li key={t} className="tech-tag">{t}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </>
+                                    )}
+
+                                    <hr />
+                                    <div className="pj-buttons">
+                                        <ModalButton
+                                            href={selected.link}
+                                            primary
+                                            icon={<FiEye />}
+                                            disabledText="Demo coming soon"
+                                        >
+                                            View Demo
+                                        </ModalButton>
+                                        <ModalButton
+                                            href={selected.github}
+                                            icon={<FiGithub />}
+                                            disabledText="Source Code"
+                                        >
+                                            Source Code
+                                        </ModalButton>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>,
+                    document.body
+                )}
+
             <div className="spline-wrapper animate-on-scroll">
                 <iframe
                     src="https://my.spline.design/nexbotbyaximoriscopycopy-44c7Ibh8YDoKtcocPFkPL2pD/"
-                    frameBorder="0"
                     title="Spline 3D Scene"
+                    loading="lazy"
                     allowFullScreen
                 />
             </div>
