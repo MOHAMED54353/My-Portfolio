@@ -430,7 +430,7 @@ body.dark-mode .project-card:hover {
 }
 
 body.dark-mode .pj-modal {
-    background: #1e293b;
+    background: #1e293be0;
     border-color: rgba(255, 255, 255, 0.1);
 }
 
