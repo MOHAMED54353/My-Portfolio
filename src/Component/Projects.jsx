@@ -75,7 +75,7 @@ const projects = [
         img: "/wasel.png",
         images: ["/wasel.png", "/wsel2.png", "/wsel3.png",],
         link: "https://wsel-app.vercel.app/",
-        github: "",
+        github: "https://github.com/MOHAMED54353/WSEL-Shipping-Tracker",
     },
     {
         title: "PlantiCa — Plant Store",
