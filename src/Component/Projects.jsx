@@ -50,8 +50,8 @@ const projects = [
         desc: "An interactive e-commerce application that enables users to explore products, view product information, and manage their shopping cart. Built with React and JavaScript, using JSON Server as a mock backend to simulate API requests and data operations during development.",
         tech: [
             "E-commerce",
-            "Bootstrap",
             "React.js",
+            "Bootstrap",
             "JavaScript",
             "JSON Server",
             "REST API"
@@ -65,7 +65,7 @@ const projects = [
         title: "Wasel — Shipment Tracking",
         desc: "A React-based shipment tracking application designed to give users a clear view of their delivery information and shipment status. Focuses on organizing tracking details into an intuitive interface, with reusable components and a responsive layout for a consistent experience across devices.",
         tech: [
-            "React",
+            "React.Js",
             "React Router",
             "Tailwend CSS",
             "JavaScript",
@@ -82,15 +82,15 @@ const projects = [
         desc: "A React-based plant shopping experience that brings plant discovery and online product browsing into one interface. Designed to showcase plants and related offerings through reusable UI components and responsive layouts. Currently focused on the frontend, with backend integration planned for a future stage.",
         tech: [
             "E-commerce",
+            "React.Js",
             "Bootstrap",
-            "React",
             "JavaScript",
             "CSS"
         ],
         img: "/pp.png",
-        images: [],
+        images: ["/pp.png", "/p2.png", "/p3.png",],
         link: "https://plantica-pearl.vercel.app/",
-        github: "",
+        github: "https://github.com/MOHAMED54353/PlantiCa-Plant-Store",
     },
     {
         title: "Qatma — Egyptian Home Kitchen",
@@ -100,7 +100,7 @@ const projects = [
             "CSS3"
         ],
         img: "/Qatma.png",
-        images: [],
+        images: ["/Qatma.png", "/qatma2.png", "/qatma3.png",],
         link: "https://qatma-seven.vercel.app/",
         github: "https://github.com/MOHAMED54353/Qatma",
     },
@@ -114,8 +114,8 @@ const projects = [
             "CSS",
             "Frontend Animations"
         ],
-        img: "/Screenshot 2026-03-30 115019.png",
-        images: [],
+        img: "/alahly.png",
+        images: ["/alahly.png", "/alahly2.png", "/alahly3.png", "/alahly4.png",],
         link: "https://alahly-liart.vercel.app/",
         github: "https://github.com/MOHAMED54353/Al-Ahly-Interactive-Website",
     },
@@ -127,7 +127,7 @@ const projects = [
             "CSS3"
         ],
         img: "/elnasser.png",
-        images: [],
+        images: ["/elnasser.png", "/elnasser2.png", "/elnasser3.png", "/elnasser4.png",],
         link: "https://el-nasser-lab.vercel.app/",
         github: "https://github.com/MOHAMED54353/El-nasser-lab",
     },
