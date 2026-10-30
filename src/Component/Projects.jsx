@@ -83,7 +83,7 @@ const projects = [
         github: "https://github.com/MOHAMED54353/WSEL-Shipping-Tracker",
     },
     {
-        title: "The UX Review — Blog Website",
+        title: "Review — Blog Website",
         status: "in-progress",
         desc: "A modern, responsive blog website for UX design and digital culture, built around a bold neo-brutalist visual identity. Features a hero section, a latest articles feed with category tags and post details, a sticky trending and categories sidebar, author profile cards with social links, and a community section with testimonials. Built entirely with HTML and CSS, with a focus on strong typography, thick borders, hard shadows, interactive hover effects, and a clean, responsive layout.",
         tech: [
