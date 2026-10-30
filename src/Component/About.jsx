@@ -120,6 +120,7 @@ const About = () => {
         .about-text {
           font-size: 1.1rem;
           line-height: 1.8;
+          font-weight: 600;
           color: #555;
           margin-bottom: 1.5rem;
           position: relative;

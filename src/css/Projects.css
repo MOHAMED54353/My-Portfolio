@@ -81,6 +81,53 @@
     opacity: 1;
 }
 
+/* Status badge */
+.status-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.status-badge svg {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.status-badge.completed {
+    background: rgba(220, 252, 231, 0.95);
+    color: #15803d;
+    border-color: rgba(22, 163, 74, 0.35);
+}
+
+.status-badge.in-progress {
+    background: rgba(254, 243, 199, 0.95);
+    color: #b45309;
+    border-color: rgba(217, 119, 6, 0.35);
+}
+
+.status-badge.inline {
+    position: static;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+}
+
+.status-badge.inline svg {
+    font-size: 1.05rem;
+}
+
 .project-body {
     display: flex;
     flex-direction: column;
@@ -360,6 +407,10 @@ a.icon-btn:hover {
     gap: 1.5rem;
 }
 
+.pj-row.pj-status-row {
+    align-items: center;
+}
+
 .pj-label {
     display: inline-flex;
     align-items: center;
@@ -368,6 +419,10 @@ a.icon-btn:hover {
     font-size: 1.1rem;
     min-width: 110px;
     padding-top: 6px;
+}
+
+.pj-status-row .pj-label {
+    padding-top: 0;
 }
 
 .pj-row .tech-list {
@@ -468,6 +523,18 @@ body.dark-mode .pj-main-img {
     border-color: rgba(255, 255, 255, 0.12);
 }
 
+body.dark-mode .status-badge.completed {
+    background: rgba(20, 83, 45, 0.85);
+    color: #86efac;
+    border-color: rgba(134, 239, 172, 0.35);
+}
+
+body.dark-mode .status-badge.in-progress {
+    background: rgba(120, 53, 15, 0.85);
+    color: #fcd34d;
+    border-color: rgba(252, 211, 77, 0.35);
+}
+
 /* Spline */
 .spline-wrapper {
     width: 100%;
@@ -543,6 +610,10 @@ body.dark-mode .pj-main-img {
         gap: 0.6rem;
     }
 
+    .pj-row.pj-status-row {
+        align-items: flex-start;
+    }
+
     .thumb {
         width: 90px;
     }
@@ -566,7 +637,6 @@ body.dark-mode .pj-main-img {
     transform: translateY(0);
 }
 
-/* الكارت: دخول بطيء مع الـ scroll، وhover سريع (بـ translate عشان ميتعارضش مع transform بتاع الدخول) */
 .project-card.animate-on-scroll {
     transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
         transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),

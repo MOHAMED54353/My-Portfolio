@@ -106,7 +106,8 @@ body.dark-mode .typed-cursor {
 }
 
 .hero-description {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   line-height: 1.8;
   color: #130f0f;
   margin-bottom: 2.5rem;

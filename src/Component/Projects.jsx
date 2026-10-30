@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { FiEye, FiGithub, FiX, FiTag } from "react-icons/fi";
+import { FiEye, FiGithub, FiX, FiTag, FiCheckCircle, FiClock, FiActivity } from "react-icons/fi";
 import "../css/Projects.css";
 
 
+// status: "completed" | "in-progress"
 const projects = [
     {
         title: "Fixora AI",
+        status: "completed",
         desc: "An AI-powered car maintenance platform that simplifies vehicle servicing through intelligent issue diagnosis, online service booking, and technician coordination. Built with React, featuring role-based experiences for customers, technicians, and administrators, API integration, authentication, booking management, and a complete service workflow. Developed the frontend as part of a collaborative graduation project with a dedicated backend team.",
         tech: [
             "SaaS",
@@ -22,12 +24,13 @@ const projects = [
             "React Toastify"
         ],
         img: "/fixora1.png",
-        images: ["/fixora1.png", "/fixora2.png", "/fixora4.png","/fixora3.png"],
+        images: ["/fixora1.png", "/fixora2.png", "/fixora4.png", "/fixora3.png"],
         link: "https://fixora-one.vercel.app/home",
         github: "https://github.com/MOHAMED54353/Fixora-Ai",
     },
     {
         title: "ATHAR® — Premium Fashion",
+        status: "completed",
         desc: "A premium fashion e-commerce experience built around a distinctive visual identity and immersive digital storytelling. Combines sophisticated product presentation, refined layouts, smooth animations, and responsive interactions to create an engaging brand experience across devices. Designed to bring modern fashion aesthetics into an elegant, interactive web interface.",
         tech: [
             "E-commerce",
@@ -47,6 +50,7 @@ const projects = [
     },
     {
         title: "Elmatgar — E-Commerce",
+        status: "in-progress",
         desc: "An interactive e-commerce application that enables users to explore products, view product information, and manage their shopping cart. Built with React and JavaScript, using JSON Server as a mock backend to simulate API requests and data operations during development.",
         tech: [
             "E-commerce",
@@ -63,6 +67,7 @@ const projects = [
     },
     {
         title: "Wasel — Shipment Tracking",
+        status: "completed",
         desc: "A React-based shipment tracking application designed to give users a clear view of their delivery information and shipment status. Focuses on organizing tracking details into an intuitive interface, with reusable components and a responsive layout for a consistent experience across devices.",
         tech: [
             "React.Js",
@@ -79,6 +84,7 @@ const projects = [
     },
     {
         title: "PlantiCa — Plant Store",
+        status: "in-progress",
         desc: "A React-based plant shopping experience that brings plant discovery and online product browsing into one interface. Designed to showcase plants and related offerings through reusable UI components and responsive layouts. Currently focused on the frontend, with backend integration planned for a future stage.",
         tech: [
             "E-commerce",
@@ -94,6 +100,7 @@ const projects = [
     },
     {
         title: "Qatma — Egyptian Home Kitchen",
+        status: "completed",
         desc: "A responsive website for an Egyptian home kitchen, designed to introduce the brand, showcase its food offerings, and create a welcoming online presence. Built with semantic HTML and custom CSS, with a focus on visual consistency, clear content hierarchy, and an accessible browsing experience.",
         tech: [
             "HTML5",
@@ -106,6 +113,7 @@ const projects = [
     },
     {
         title: "Al Ahly — Interactive Fan Website",
+        status: "completed",
         desc: "A React-based fan website inspired by Al Ahly SC, combining football-themed visuals, interactive UI elements, and frontend animations into an engaging digital experience. Created as a personal project to explore creative interface development, animation techniques, and the presentation of a football club's identity through the web.",
         tech: [
             "React.Js",
@@ -121,6 +129,7 @@ const projects = [
     },
     {
         title: "El-Nasser — Medical Laboratory",
+        status: "completed",
         desc: "A website for a medical laboratory, built to present laboratory services and essential information through a clear, organized interface. Developed using HTML and CSS, with an emphasis on readable content, structured layouts, and straightforward navigation to help visitors find relevant information.",
         tech: [
             "HTML5",
@@ -133,6 +142,7 @@ const projects = [
     },
     {
         title: "Autocare — Automotive Landing Page",
+        status: "in-progress",
         desc: "A landing page for an automotive care business, designed to present car maintenance services and establish a clear online brand presence. Built with HTML and CSS, focusing on structured content, service presentation, and a clean visual layout.",
         tech: [
             "HTML5",
@@ -146,6 +156,21 @@ const projects = [
 ];
 
 const MAX_CARD_TAGS = 3;
+
+const STATUS = {
+    completed: { label: "Completed", icon: <FiCheckCircle /> },
+    "in-progress": { label: "In Progress", icon: <FiClock /> },
+};
+
+const StatusBadge = ({ status, inline }) => {
+    const key = STATUS[status] ? status : "in-progress";
+    return (
+        <span className={`status-badge ${key}${inline ? " inline" : ""}`}>
+            {STATUS[key].icon} {STATUS[key].label}
+        </span>
+    );
+};
+
 const IconButton = ({ href, label, children }) =>
     href ? (
         <a
@@ -240,6 +265,7 @@ const Projects = () => {
                         style={{ transitionDelay: `${(i % 2) * 0.1}s` }}
                     >
                         <div className="card-image">
+                            <StatusBadge status={p.status} />
                             <img
                                 src={encodeURI(p.img)}
                                 alt={p.title}
@@ -332,6 +358,14 @@ const Projects = () => {
 
                                 <div className="pj-info">
                                     <p className="pj-desc">{selected.desc}</p>
+
+                                    <hr />
+                                    <div className="pj-row pj-status-row">
+                                        <span className="pj-label">
+                                            <FiActivity /> Status:
+                                        </span>
+                                        <StatusBadge status={selected.status} inline />
+                                    </div>
 
                                     {selected.tech.length > 0 && (
                                         <>
