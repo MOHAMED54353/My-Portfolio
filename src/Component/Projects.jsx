@@ -96,7 +96,7 @@ const projects = [
         ],
         img: "/review-blog1.png",
         images: ["/review-blog1.png", "/review-blog2.png", "/review-blog3.png"],
-        link: "https://the-ux-review-blog.vercel.app/",
+        link: "",
         github: "https://github.com/MOHAMED54353/Review-Blog",
     },
     {
