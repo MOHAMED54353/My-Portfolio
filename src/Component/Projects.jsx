@@ -83,6 +83,23 @@ const projects = [
         github: "https://github.com/MOHAMED54353/WSEL-Shipping-Tracker",
     },
     {
+        title: "The UX Review — Blog Website",
+        status: "in-progress",
+        desc: "A modern, responsive blog website for UX design and digital culture, built around a bold neo-brutalist visual identity. Features a hero section, a latest articles feed with category tags and post details, a sticky trending and categories sidebar, author profile cards with social links, and a community section with testimonials. Built entirely with HTML and CSS, with a focus on strong typography, thick borders, hard shadows, interactive hover effects, and a clean, responsive layout.",
+        tech: [
+            "HTML5",
+            "CSS3",
+            "Flexbox",
+            "Responsive Design",
+            "Font Awesome",
+            "Google Fonts"
+        ],
+        img: "/review-blog1.png",
+        images: ["/review-blog1.png", "/review-blog2.png", "/review-blog3.png"],
+        link: "https://the-ux-review-blog.vercel.app/",
+        github: "https://github.com/MOHAMED54353/Review-Blog",
+    },
+    {
         title: "PlantiCa — Plant Store",
         status: "in-progress",
         desc: "A React-based plant shopping experience that brings plant discovery and online product browsing into one interface. Designed to showcase plants and related offerings through reusable UI components and responsive layouts. Currently focused on the frontend, with backend integration planned for a future stage.",
