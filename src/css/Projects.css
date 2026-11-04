@@ -31,7 +31,6 @@
     gap: 28px;
 }
 
-/* Card */
 .project-card {
     position: relative;
     display: flex;
@@ -81,7 +80,6 @@
     opacity: 1;
 }
 
-/* Status badge */
 .status-badge {
     position: absolute;
     top: 12px;
@@ -160,7 +158,6 @@
     overflow: hidden;
 }
 
-/* Tech pills */
 .card-tags {
     flex-wrap: nowrap;
     overflow: hidden;
@@ -206,7 +203,6 @@ body.dark-mode .tech-tag.more {
     border-color: rgba(124, 58, 237, 0.35);
 }
 
-/* Card actions */
 .card-actions {
     display: flex;
     gap: 10px;
@@ -265,7 +261,6 @@ a.icon-btn:hover {
     cursor: not-allowed;
 }
 
-/* ===== Modal (بيتعمل render على document.body) ===== */
 .pj-backdrop {
     position: fixed;
     inset: 0;
@@ -535,7 +530,6 @@ body.dark-mode .status-badge.in-progress {
     border-color: rgba(252, 211, 77, 0.35);
 }
 
-/* Spline */
 .spline-wrapper {
     width: 100%;
     height: 500px;
@@ -624,7 +618,6 @@ body.dark-mode .status-badge.in-progress {
     }
 }
 
-/* Scroll animation */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(60px);
