@@ -73,7 +73,7 @@ const About = () => {
         .about-badge::before {
           content: '✦';
           position: absolute;
-          left: -20px;
+          left: -25px;
           color: #0780fa;
           animation: sparkle 1s ease-in-out infinite;
         }
@@ -81,7 +81,7 @@ const About = () => {
         .about-badge::after {
           content: '✦';
           position: absolute;
-          right: -20px;
+          right: -25px;
           color: #077ff7;
           animation: sparkle 1s ease-in-out infinite 1s;
         }
@@ -95,7 +95,7 @@ const About = () => {
           font-size: 2.5rem;
           font-weight: 700;
           color: #0f7dec;
-          margin-bottom: 1rem;
+          margin: 1rem 0;
           position: relative;
           display: inline-block;
         }
@@ -103,10 +103,10 @@ const About = () => {
         .about-title::after {
           content: '';
           position: absolute;
-          bottom: -10px;
+          bottom: -20px;
           left: 50%;
           transform: translateX(-50%);
-          width: 100px;
+          width: 200px;
           height: 4px;
           background: linear-gradient(90deg, transparent, #0f7dec, transparent);
           border-radius: 2px;
