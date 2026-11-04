@@ -4,7 +4,6 @@ import { FiEye, FiGithub, FiX, FiTag, FiCheckCircle, FiClock, FiActivity } from 
 import "../css/Projects.css";
 
 
-// status: "completed" | "in-progress"
 const projects = [
     {
         title: "Fixora AI",
