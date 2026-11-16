@@ -1,0 +1,69 @@
+button.arcade-btn {
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.ttt-status {
+    color: var(--hd-heading, #0f0a1e);
+}
+
+.ttt-mode {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1.5px solid var(--hd-btn-border, rgba(15, 10, 30, 0.22));
+    background: transparent;
+    color: var(--hd-btn-color, #0f0a1e);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.ttt-mode.is-active {
+    border-color: transparent;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ttt-board {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ttt-cell {
+    aspect-ratio: 1;
+    padding: 0;
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--hd-heading, #0f0a1e);
+    background: var(--hd-card-bg, rgba(110, 80, 200, 0.05));
+    border: 1px solid var(--hd-card-border, rgba(110, 80, 200, 0.12));
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.ttt-cell:not(:disabled):hover {
+    background: rgba(124, 58, 237, 0.1);
+    border-color: rgba(124, 58, 237, 0.5);
+    transform: translateY(-2px);
+}
+
+.ttt-cell.x {
+    color: var(--hd-accent, #7c3aed);
+}
+
+.ttt-cell.o {
+    color: #0f7dec;
+}
+
+.ttt-cell.is-win {
+    color: #fff;
+    border-color: transparent;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+@media (max-width: 480px) {
+    .ttt-cell {
+        font-size: 2.2rem;
+    }
+}

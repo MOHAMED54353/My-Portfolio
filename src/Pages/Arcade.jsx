@@ -9,12 +9,14 @@ const games = [
     {
         icon: "⭕",
         title: "Tic Tac Toe",
-        description: "Three in a row wins.",
+        description: "Three in a row wins. Play against the computer or a friend.",
+        to: "/arcade/tic-tac-toe",
     },
     {
         icon: "⌨️",
         title: "Typing Speed",
         description: "Test your words per minute.",
+        to: "/arcade/typing-speed",
     },
 
 ];
