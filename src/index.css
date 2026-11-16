@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
@@ -10,4 +9,9 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background-color: #7c3aed;
+  color: #fff;
 }

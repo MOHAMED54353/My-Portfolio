@@ -1,0 +1,126 @@
+{
+  "navbar": {
+    "about": "من أنا",
+    "skills": "المهارات",
+    "projects": "المشاريع",
+    "contact": "تواصل معي"
+  },
+  "hero": {
+    "welcome": "مرحباً بك في موقعي",
+    "subtitle": "أصنع تجارب رقمية مميزة باستخدام أحدث تقنيات الويب",
+    "title": "الانطباع الأول يدوم، فاجعله مميزاً",
+    "linkedin": "لينكد إن",
+    "showWork": "استعرض أعمالي",
+    "greeting": "أهلاً",
+    "name": "أنا محمد السيد",
+    "role": "React.js Developer",
+    "description": "مرحباً بك في معرض أعمالي الشخصي! ستجد هنا مجموعة من مشاريعي في Front-End، بالإضافة إلى استعراض لمهاراتي ومعلومات عني. أنا شغوف ببناء واجهات ويب حديثة ومتجاوبة وسهلة الاستخدام، لا تتميز بمظهرها فقط، بل توفر أيضاً تجربة استخدام سلسة ومميزة. أعمل باستمرار على تطوير مهاراتي وخبراتي في React وJavaScript وتطوير الويب لتقديم مشاريع مبتكرة وعالية الجودة."
+  },
+  "about": {
+    "hello": "مرحباً",
+    "subtitle": "مقدمة",
+    "title": "نبذة عني",
+    "paragraph1": "أنا محمد، Frontend Developer شغوف بالتفاصيل وأحب إنشاء تجارب ويب جميلة وعملية. أمتلك خبرة في JavaScript frameworks الحديثة، مع أساس قوي في مبادئ UI/UX، وأسعى لتحويل الأفكار إلى تطبيقات Responsive وسهلة الاستخدام.",
+    "paragraph2": "رحلتي في Web Development أكسبتني المهارات اللازمة للتعامل مع التحديات المعقدة وتقديم حلول عالية الجودة. أؤمن بأهمية كتابة Clean Code سهل الصيانة، والتعلم المستمر للتقنيات الجديدة لمواكبة التطور المتسارع في هذا المجال.",
+    "experience": "سنوات من الخبرة",
+    "projects": "مشروع تم تنفيذه",
+    "viewSkills": "استكشف مهاراتي"
+  },
+  "skills": {
+    "title": "المهارات",
+    "heading": "مهاراتي",
+    "technicalTitle": "الخبرات التقنية",
+    "technicalDescription": "التقنيات والأدوات التي أستخدمها لبناء تطبيقات ويب حديثة.",
+    "items": {
+      "html": "Semantic markup and modern HTML5",
+      "css": "Advanced styling and responsive layouts",
+      "javascript": "Modern ES6+ and async programming",
+      "cpp": "Object-oriented programming algorithms",
+      "react": "Component-based UI development",
+      "tailwind": "Utility-first CSS framework",
+      "bootstrap": "Rapid responsive web design framework",
+      "figma": "UI/UX design and prototyping",
+      "axios": "Promise-based HTTP client for API",
+      "github": "Code hosting and collaboration platform",
+      "git": "Version control and collaboration",
+      "responsive": "Designing for all screen sizes and devices",
+      "vite": "Next-generation frontend tooling",
+      "zod": "Type-safe schema validation for JavaScript",
+      "netlify": "Continuous deployment hosting platform",
+      "npm": "Node Package Manager",
+      "redux": "State management for JavaScript apps",
+      "zustand": "Fast scalable bearbones state-management"
+    }
+  },
+  "projects": {
+    "title": "المشاريع",
+    "heading": "أبرز أعمالي",
+    "viewDetails": "عرض التفاصيل",
+    "completed": "مكتمل",
+    "inProgress": "قيد التطوير",
+    "fixora": {
+      "name": "Fixora AI",
+      "category": "SaaS",
+      "description": "An AI-powered car maintenance platform that simplifies vehicle servicing through intelligent issue diagnosis, online service booking, and technician coordination. Built with React, featuring role-based experiences for customers, technicians, and administrators, API integration, authentication, booking management, and a complete service workflow. Developed the frontend as part of a collaborative graduation project with a dedicated backend team."
+    },
+    "athar": {
+      "name": "ATHAR® — Premium Fashion",
+      "category": "E-commerce",
+      "description": "A premium fashion e-commerce experience built around a distinctive visual identity and immersive digital storytelling. Combines sophisticated product presentation, refined layouts, smooth animations, and responsive interactions to create an engaging brand experience across devices. Designed to bring modern fashion aesthetics into an elegant, interactive web interface."
+    },
+    "elmatgar": {
+      "name": "Elmatgar — E-Commerce",
+      "category": "E-commerce",
+      "description": "An interactive e-commerce application that enables users to explore products, view product information, and manage their shopping cart. Built with React and JavaScript, using JSON Server as a mock backend to simulate API requests and data operations during development."
+    },
+    "wasel": {
+      "name": "Wasel — Shipment Tracking",
+      "category": "Shipment Tracking",
+      "description": "A React-based shipment tracking application designed to give users a clear view of their delivery information and shipment status. Focuses on organizing tracking details into an intuitive interface, with reusable components and a responsive layout for a consistent experience across devices."
+    },
+    "review": {
+      "name": "Review — Blog Website",
+      "category": "Blog",
+      "description": "A modern, responsive blog website for UX design and digital culture, built around a bold neo-brutalist visual identity. Features a hero section, a latest articles feed with category tags and post details, a sticky trending and categories sidebar, author profile cards with social links, and a community section with testimonials. Built entirely with HTML and CSS, with a focus on strong typography, thick borders, hard shadows, interactive hover effects, and a clean, responsive layout."
+    },
+    "plantica": {
+      "name": "PlantiCa — Plant Store",
+      "category": "E-commerce",
+      "description": "A React-based plant shopping experience that brings plant discovery and online product browsing into one interface. Designed to showcase plants and related offerings through reusable UI components and responsive layouts. Currently focused on the frontend, with backend integration planned for a future stage."
+    },
+    "qatma": {
+      "name": "Qatma — Egyptian Home Kitchen",
+      "category": "Food Website",
+      "description": "A responsive website for an Egyptian home kitchen, designed to introduce the brand, showcase its food offerings, and create a welcoming online presence. Built with semantic HTML and custom CSS, with a focus on visual consistency, clear content hierarchy, and an accessible browsing experience."
+    },
+    "alahly": {
+      "name": "Al Ahly — Interactive Fan Website",
+      "category": "Fan Website",
+      "description": "A React-based fan website inspired by Al Ahly SC, combining football-themed visuals, interactive UI elements, and frontend animations into an engaging digital experience. Created as a personal project to explore creative interface development, animation techniques, and the presentation of a football club's identity through the web."
+    },
+    "elnasser": {
+      "name": "El-Nasser — Medical Laboratory",
+      "category": "Medical Website",
+      "description": "A website for a medical laboratory, built to present laboratory services and essential information through a clear, organized interface. Developed using HTML and CSS, with an emphasis on readable content, structured layouts, and straightforward navigation to help visitors find relevant information."
+    },
+    "autocare": {
+      "name": "Autocare — Automotive Landing Page",
+      "category": "Landing Page",
+      "description": "A landing page for an automotive care business, designed to present car maintenance services and establish a clear online brand presence. Built with HTML and CSS, focusing on structured content, service presentation, and a clean, visual layout."
+    }
+  },
+  "contact": {
+    "title": "تواصل معي",
+    "heading": "لنعمل معاً",
+    "description": "إذا كنت ترغب في التواصل معي، فلا تتردد! يسعدني دائماً الاستماع إلى أفكارك ومناقشة مشاريعك.",
+    "email": "البريد الإلكتروني",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp"
+  },
+  "footer": {
+    "name": "محمد السيد",
+    "role": "Frontend Developer · React.js",
+    "copyright": "تم التطوير باستخدام React"
+  }
+}
