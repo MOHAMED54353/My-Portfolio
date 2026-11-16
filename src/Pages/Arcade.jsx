@@ -7,55 +7,16 @@ const games = [
         to: "/arcade/proverbs",
     },
     {
-        icon: "🔢",
-        title: "2048",
-        description: "Slide and merge the tiles to reach 2048.",
-    },
-    {
-        icon: "🃏",
-        title: "Memory Cards",
-        description: "Match all the pairs in as few moves as you can.",
-    },
-    {
-        icon: "🧩",
-        title: "Sudoku",
-        description: "Fill the grid so every row, column and box is complete.",
-    },
-    {
-        icon: "🐍",
-        title: "Snake",
-        description: "Eat, grow, and stay away from the walls.",
-    },
-    {
-        icon: "🐦",
-        title: "Flappy Bird",
-        description: "Tap to fly through the gaps without crashing.",
-    },
-    {
-        icon: "🏓",
-        title: "Pong",
-        description: "The original two-paddle classic.",
-    },
-    {
-        icon: "⚡",
-        title: "Reaction Time",
-        description: "See how fast you can react.",
+        icon: "⭕",
+        title: "Tic Tac Toe",
+        description: "Three in a row wins.",
     },
     {
         icon: "⌨️",
         title: "Typing Speed",
         description: "Test your words per minute.",
     },
-    {
-        icon: "⭕",
-        title: "Tic Tac Toe",
-        description: "Three in a row wins.",
-    },
-    {
-        icon: "✂️",
-        title: "Rock Paper Scissors",
-        description: "A quick round against the computer.",
-    },
+
 ];
 
 const Arcade = () => {
