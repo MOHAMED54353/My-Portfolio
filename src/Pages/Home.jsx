@@ -7,6 +7,7 @@ import Projects from "../Components/Projects";
 import Scroll from "../Components/Scroll";
 import Footer from "../Components/Footer";
 import Technical from "../Components/Technical";
+import Marquee from "../Components/Marquee";
 import "../css/Home.css";
 
 const Home = () => {
@@ -118,6 +119,7 @@ const Home = () => {
       <Skill />
       <Technical />
       <Projects />
+      <Marquee />
       <Contact />
       <Footer />
       <Scroll />
