@@ -58,6 +58,8 @@ body.dark-mode .navbar:hover {
 
 .navbar .nav-link:hover {
   color: #ef0808;
+  background-color: rgba(255, 176, 176, 0.1);
+  border-radius: 8px;
 }
 
 .navbar .nav-link:hover::before {
