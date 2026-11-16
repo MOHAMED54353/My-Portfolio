@@ -424,14 +424,14 @@ const Projects = () => {
                     document.body
                 )}
 
-            <div className="spline-wrapper animate-on-scroll">
+            {/* <div className="spline-wrapper animate-on-scroll">
                 <iframe
                     src="https://my.spline.design/nexbotbyaximoriscopycopy-44c7Ibh8YDoKtcocPFkPL2pD/"
                     title="Spline 3D Scene"
                     loading="lazy"
                     allowFullScreen
                 />
-            </div>
+            </div> */}
         </section>
     );
 };
