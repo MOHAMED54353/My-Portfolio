@@ -1,5 +1,3 @@
-/* بيستخدم نفس متغيرات الـ hero (--hd-*) فبيتغير مع الدارك مود تلقائي */
-
 .arcade {
     position: relative;
     min-height: 100vh;
@@ -10,7 +8,6 @@
     transition: background 0.45s ease;
 }
 
-/* إضاءة خفيفة في الخلفية زي الـ hero */
 .arcade::before,
 .arcade::after {
     content: "";
