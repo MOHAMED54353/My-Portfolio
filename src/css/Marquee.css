@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     padding: 1.6rem 0;
+    margin: 2rem 0 .5rem 0;
     background: var(--hd-card-bg, rgba(110, 80, 200, 0.05));
     border-top: 1px solid var(--hd-card-border, rgba(110, 80, 200, 0.12));
     border-bottom: 1px solid var(--hd-card-border, rgba(110, 80, 200, 0.12));
@@ -9,12 +10,14 @@
     transition: all 0.45s ease, border-color 0.45s ease;
     -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
     mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    transform: rotate(4deg);
 }
 
 .marquee-track {
     display: flex;
     width: max-content;
-    animation: marquee-scroll 30s linear infinite;
+    animation: marquee-scroll 40s linear infinite;
+    animation-direction: reverse;
 }
 
 .marquee:hover .marquee-track {
@@ -30,7 +33,7 @@
 }
 
 .marquee-text {
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 900;
     letter-spacing: -0.03em;
     line-height: 1.1;

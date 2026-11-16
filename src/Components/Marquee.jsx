@@ -2,18 +2,17 @@ import "../css/Marquee.css";
 
 const Marquee = () => {
     const items = [
-        "React",
-        "JavaScript",
-        "UI Design",
-        "Responsive",
-        "Animations",
-        "Clean Code",
+        "Creative Problem Solving",
+        "Frontend Engineering",
+        "AI Meets Creativity",
+        "Code With Personality",
+        "Modern Web Experiences",
+        "Always Learning & Building",
     ];
 
     return (
         <div className="marquee" aria-label="Skills">
             <div className="marquee-track">
-                {/* بنكرر الليست مرتين عشان اللوب يبقى سلس */}
                 {[...items, ...items].map((item, index) => (
                     <div
                         className={`marquee-item ${index % 2 === 1 ? "outline" : ""}`}
