@@ -29,8 +29,8 @@ const Arcade = () => {
                         Take a break, <span className="arcade-accent">play a game</span>
                     </h1>
                     <p className="arcade-sub">
-                        A small collection of browser games built with React.
-                        Pick a game and start playing.
+                        A fun collection of mini-games to challenge yourself,
+                        test your skills, and enjoy. Pick a game and let the fun begin!
                     </p>
 
                     <div className="arcade-actions">
