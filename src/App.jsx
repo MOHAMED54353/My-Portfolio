@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Arcade from "./Pages/Arcade";
 import ProverbsGame from './Pages/ProverbsGame';
 import TicTacToe from "./Pages/TicTacToe";
+import JsonFormatter from "./Pages/JsonFormatter";
 
 
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/arcade" element={<Arcade />} />
           <Route path="/arcade/proverbs" element={<ProverbsGame />} />
           <Route path="/arcade/tic-tac-toe" element={<TicTacToe />} />
+          <Route path="/arcade/json-formatter" element={<JsonFormatter />} />
         </Route>
       </Routes>
     </BrowserRouter>

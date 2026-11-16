@@ -13,10 +13,17 @@ const games = [
         to: "/arcade/tic-tac-toe",
     },
     {
+        icon: "{ }",
+        title: "JSON Formatter",
+        description: "Format, validate, and minify JSON on the fly.",
+        to: "/arcade/json-formatter",
+        badge: "Tool",
+        cta: "Open",
+    },
+    {
         icon: "⌨️",
         title: "Typing Speed",
         description: "Test your words per minute.",
-        to: "/arcade/typing-speed",
     },
 
 ];
@@ -68,7 +75,7 @@ const Arcade = () => {
                                         className={`arcade-badge ${playable ? "" : "arcade-badge--soon"
                                             }`}
                                     >
-                                        {playable ? "Playable" : "Coming soon"}
+                                        {game.badge ?? (playable ? "Playable" : "Coming soon")}
                                     </span>
                                 </div>
 
@@ -77,7 +84,7 @@ const Arcade = () => {
 
                                 {playable && (
                                     <span className="arcade-play">
-                                        Play <span aria-hidden="true">→</span>
+                                        {game.cta ?? "Play"} <span aria-hidden="true">→</span>
                                     </span>
                                 )}
                             </Tag>
