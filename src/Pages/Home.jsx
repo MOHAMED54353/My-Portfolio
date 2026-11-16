@@ -45,7 +45,6 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Scroll animation: بيظهر أي عنصر عليه .animate-on-scroll (زي About) أول ما يدخل الشاشة
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

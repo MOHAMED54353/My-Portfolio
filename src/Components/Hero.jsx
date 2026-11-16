@@ -3,7 +3,7 @@ import "../css/Hero.css";
 
 const Hero = () => {
     return (
-        <section className="hd-wrap">
+        <section className="hd-wrap" id="home">
             <div className="hd-glow hd-glow--left" />
             <div className="hd-glow hd-glow--right" />
             <div className="hd-glow hd-glow--center" />
