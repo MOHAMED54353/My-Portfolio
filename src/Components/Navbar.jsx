@@ -51,6 +51,7 @@ const Navbar = () => {
     <nav className={`navbar ${visible ? "navbar--visible" : "navbar--hidden"}`}>
       <div className="container">
         <ul className="nav-links">
+          <li><a href="/arcade" className="nav-link">Arcade</a></li>
           <li><a href="#about" className="nav-link">About</a></li>
           <li><a href="#Skill" className="nav-link">Skills</a></li>
           <li><a href="#projects" className="nav-link">Projects</a></li>

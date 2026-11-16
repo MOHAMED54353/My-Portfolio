@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  max-width: 400px;
+  max-width: 480px;
   margin: 30px auto;
   border: #fbfcfcf7 2px solid;
   border-radius: 50px;
@@ -41,7 +41,7 @@ body.dark-mode .navbar:hover {
 }
 
 .container {
-  max-width: 380px;
+  width: 97%;
   padding: 0 1rem;
   display: flex;
   align-items: center;
@@ -192,7 +192,7 @@ html {
 
 @media (max-width: 768px) {
   .navbar {
-    max-width: fit-content;
+    max-width: 90%;
     margin: 10px auto;
     padding: 0.4rem 0.3rem;
     border-radius: 40px;
