@@ -72,6 +72,7 @@
 @media (max-width: 768px) {
     .marquee {
         padding: 1.1rem 0;
+        transform: rotate(0deg);
     }
 
     .marquee-item {
@@ -81,6 +82,7 @@
 
     .marquee-track {
         animation-duration: 22s;
+        animation: marquee-scroll 40s linear infinite;
     }
 }
 
