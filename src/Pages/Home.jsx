@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import Hero from "../Component/Hero";
-import Skill from "../Component/Skill";
-import Contact from "../Component/Contact";
-import About from "../Component/About";
-import Projects from "../Component/Projects";
-import Scroll from "../Component/Scroll";
-import Footer from "../Component/Footer";
-import Technical from "../Component/Technical";
+import Hero from "../Components/Hero";
+import Skill from "../Components/Skill";
+import Contact from "../Components/Contact";
+import About from "../Components/About";
+import Projects from "../Components/Projects";
+import Scroll from "../Components/Scroll";
+import Footer from "../Components/Footer";
+import Technical from "../Components/Technical";
 import "../css/Home.css";
 
 const Home = () => {
