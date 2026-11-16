@@ -83,7 +83,7 @@ const Contact = () => {
           </a>
 
           <a
-            href="https://wa.me/201275989902"
+            href="https://wa.me/201044321689"
             target="_blank"
             rel="noreferrer"
             className="contact-method animate-on-scroll"
@@ -94,7 +94,7 @@ const Contact = () => {
             </div>
             <div className="contact-method-info">
               <h3>WhatsApp</h3>
-              <p>+20 127 598 9902</p>
+              <p>+20 1044321689</p>
             </div>
           </a>
         </div>
