@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../css/nav.css";
 
-// اللينكات اللي في النص
 const navLinks = [
   { label: "Home", href: "/", icon: "fa-solid fa-house", isHome: true },
   { label: "About", href: "/#about", icon: "fa-regular fa-circle-user" },
@@ -10,7 +9,6 @@ const navLinks = [
   { label: "Contact", href: "/#contact", icon: "fa-regular fa-envelope" },
 ];
 
-// الصفحات اللي جوه الـ menu، ضيف أي صفحة جديدة هنا
 const menuPages = [
   { label: "Arcade", href: "/arcade", icon: "fa-solid fa-gamepad" },
 ];
@@ -35,8 +33,6 @@ const Navbar = () => {
       if (!aboutSection) return;
       const aboutTop = aboutSection.getBoundingClientRect().top + window.scrollY;
       const currentScrollY = window.scrollY;
-
-      // فوق الـ about: ظاهر. بعده: يظهر لو طالع، يختفي لو نازل
       setVisible(currentScrollY < aboutTop || currentScrollY < lastScrollY.current);
       lastScrollY.current = currentScrollY;
     };
@@ -45,7 +41,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // قفل الـ menu لما تدوس بره أو Escape
   useEffect(() => {
     if (!menuOpen) return;
 
@@ -62,12 +57,11 @@ const Navbar = () => {
     };
   }, [menuOpen]);
 
-  // لو الناف بار اختفى، اقفل الـ menu
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!visible) setMenuOpen(false);
   }, [visible]);
 
-  // Home: لو احنا في الصفحة الرئيسية اطلع فوق من غير reload
   const handleHomeClick = (e) => {
     setMenuOpen(false);
     if (window.location.pathname === "/") {
@@ -79,9 +73,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${visible ? "" : "navbar--hidden"}`}>
-      {/* w-100 مهمة: .navbar بتاع Bootstrap هو display:flex */}
       <div className="d-flex align-items-center justify-content-between gap-3 w-100">
-        {/* اللوجو (شمال) */}
         <a href="/" className="d-flex flex-shrink-0" onClick={handleHomeClick} aria-label="Home">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 230" width="50" height="45" fill="none">
             <defs>
@@ -115,7 +107,6 @@ const Navbar = () => {
           </svg>
         </a>
 
-        {/* اللينكات (النص) - بتختفي تحت 992px وبتروح للـ menu */}
         <ul className="nav flex-nowrap d-none d-lg-flex flex-grow-1 justify-content-center gap-4">
           {navLinks.map((link) => (
             <li key={link.label}>
@@ -131,7 +122,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* الدارك مود + الـ menu (يمين) */}
         <div className="d-flex align-items-center gap-3 flex-shrink-0">
           <button
             className={`theme-toggle-btn ${darkMode ? "active" : ""}`}
@@ -159,7 +149,6 @@ const Navbar = () => {
               className={`dropdown-menu dropdown-menu-end mt-3 ${menuOpen ? "show" : ""}`}
               data-bs-popper="static"
             >
-              {/* على الشاشات الصغيرة اللينكات الرئيسية بتظهر هنا */}
               {navLinks.map((link) => (
                 <li key={link.label} className="d-lg-none">
                   <a
