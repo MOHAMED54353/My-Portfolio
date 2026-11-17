@@ -11,6 +11,7 @@ const navLinks = [
 
 const menuPages = [
   { label: "Arcade", href: "/arcade", icon: "fa-solid fa-gamepad" },
+  { label: "Reading Club", href: "/books", icon: "fa-solid fa-book" },
 ];
 
 const Navbar = () => {

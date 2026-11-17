@@ -1,0 +1,35 @@
+.book-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124, 58, 237, 0.35);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.22);
+}
+
+.book-cover {
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(60, 30, 120, 0.25);
+}
+
+.book-cover--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, rgba(7, 49, 237, 0.961), rgba(107, 5, 210, 0.569));
+}
+
+.book-card .arcade-play,
+.book-card .arcade-play:hover {
+    align-self: center;
+    color: #fff;
+}
+
+.book-card .arcade-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
+}
