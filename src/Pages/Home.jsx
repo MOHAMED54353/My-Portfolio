@@ -94,7 +94,7 @@ const Home = () => {
               Github
               <i className="fas fa-arrow-right"></i>
             </button>
-            <a href="/Muhammed Elsayed CV.pdf" className="btn btn-secondary" target="_blank" >
+            <a href="/Cv-Muhammed.pdf" className="btn btn-secondary" target="_blank" >
               Download CV <i className="fas fa-download"></i>
             </a>
           </div>
