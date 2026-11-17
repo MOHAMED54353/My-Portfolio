@@ -42,7 +42,7 @@
     background: #ffffff;
 }
 .json-box {
-    height: 200px;
+    height: 280px;
     resize: vertical;
     overflow: auto;
     white-space: pre;
